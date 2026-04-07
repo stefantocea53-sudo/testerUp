@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earn by Playing & Scrolling</title>
+    <title>Testerup | Premium Beta Testing</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -12,7 +12,7 @@
             --dark-bg: #0f1216;
             --card-bg: #161b22;
             --border: #30363d;
-            --orange: #ffa500;
+            --gold: #d4af37;
         }
 
         body {
@@ -29,11 +29,10 @@
             max-width: 480px;
             width: 100%;
             text-align: center;
-            padding-top: 20px;
         }
 
-        /* Logos Header */
-        .header-logos {
+        /* Branding Header */
+        .brand-header {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -41,19 +40,20 @@
             margin-bottom: 25px;
         }
 
-        .logo-box {
-            width: 60px;
-            height: 60px;
-            background: #1c2128;
-            border-radius: 15px;
+        .brand-logo {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #1c2128, #2ecc71);
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             border: 1px solid var(--border);
+            box-shadow: 0 0 15px rgba(46, 204, 113, 0.2);
         }
 
-        .badge-status {
+        .status-badge {
             background: rgba(46, 204, 113, 0.1);
             border: 1px solid var(--green);
             color: var(--green);
@@ -61,15 +61,14 @@
             border-radius: 50px;
             font-size: 0.75rem;
             font-weight: 700;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            text-transform: uppercase;
         }
 
         h1 {
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             font-weight: 900;
             line-height: 1.1;
             margin: 0 0 10px;
@@ -81,12 +80,12 @@
 
         .subtitle {
             color: #8b949e;
-            font-size: 1rem;
-            margin-bottom: 35px;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
         }
 
-        /* Main Download Button */
-        .download-btn {
+        /* Call to Action Button */
+        .cta-btn {
             background: var(--green);
             color: white;
             padding: 22px;
@@ -97,25 +96,23 @@
             align-items: center;
             font-weight: 800;
             font-size: 1.4rem;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.2);
+            margin-bottom: 35px;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
             transition: 0.3s;
         }
 
-        .download-btn:hover {
-            transform: scale(1.02);
+        .cta-btn:hover {
+            transform: translateY(-3px);
             filter: brightness(1.1);
         }
 
-        .download-btn span {
+        .cta-btn span {
             font-size: 0.8rem;
             font-weight: 400;
             opacity: 0.9;
-            margin-top: 4px;
         }
 
-        .section-label {
-            text-align: center;
+        .section-title {
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -124,7 +121,7 @@
             font-weight: 600;
         }
 
-        /* Offer Card */
+        /* Testerup Offer Card */
         .offer-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -133,78 +130,73 @@
             display: flex;
             align-items: center;
             text-align: left;
-            margin-bottom: 15px;
-            position: relative;
+            margin-bottom: 12px;
         }
 
         .offer-icon {
             width: 50px;
             height: 50px;
-            background: black;
-            border-radius: 50%;
+            background: #000;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 15px;
-            font-size: 1.2rem;
-            color: var(--green);
+            color: var(--gold);
+            font-size: 1.3rem;
         }
 
-        .offer-info b {
+        .offer-details b {
             display: block;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
-        .offer-info span {
-            font-size: 0.8rem;
+        .offer-details span {
+            font-size: 0.75rem;
             color: #8b949e;
         }
 
-        .offer-price {
+        .offer-payout {
             margin-left: auto;
             text-align: right;
         }
 
-        .price-val {
+        .payout-amount {
             color: var(--green);
             font-weight: 900;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             display: block;
         }
 
-        .rating {
-            color: var(--orange);
-            font-size: 0.75rem;
-        }
-
-        /* Activation Box */
-        .activation-box {
-            background: rgba(255, 165, 0, 0.05);
-            border: 1px solid rgba(255, 165, 0, 0.3);
+        /* Activation Required Box */
+        .activation-card {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 20px;
             padding: 20px;
             text-align: left;
+            margin-top: 20px;
             display: flex;
             gap: 15px;
         }
 
-        .activation-box i {
-            color: var(--orange);
-            font-size: 1.5rem;
-            margin-top: 5px;
+        .activation-card i {
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-top: 3px;
         }
 
-        .act-text b {
-            color: var(--orange);
+        .act-content b {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 0.85rem;
             display: block;
             margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .act-text p {
+        .act-content p {
             margin: 0;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #c9d1d9;
             line-height: 1.4;
         }
@@ -213,43 +205,316 @@
 <body>
 
 <div class="container">
-    <div class="header-logos">
-        <div class="logo-box"><i class="fab fa-tiktok"></i></div>
-        <span style="color: #484f58; font-size: 1.2rem;">&times;</span>
-        <div class="logo-box"><i class="fas fa-coins" style="color: var(--green);"></i></div>
+    <div class="brand-header">
+        <div class="brand-logo"><i class="fas fa-gamepad"></i></div>
+        <span style="color: #484f58; font-size: 1.5rem;">+</span>
+        <div class="brand-logo" style="background: #fff; color: #000;"><i class="fas fa-check-double"></i></div>
     </div>
 
-    <div class="badge-status">
-        <i class="fas fa-check-circle"></i> You are here
+    <div class="status-badge">
+        <i class="fas fa-user-shield"></i> Premium Tester Access
     </div>
 
-    <h1>Earn money by <span>playing</span> and <span>scrolling</span></h1>
-    <p class="subtitle">Download. Scroll & test games. Earn money.</p>
+    <h1>Get Paid for <span>Testing</span> Games & <span>Apps</span></h1>
+    <p class="subtitle">Join Testerup: The #1 Platform for Paid Beta Testing.</p>
 
-    <a href="https://rainawards.com/r/eyJ0IjoidGVzdGVydXAtYiIsInUiOiI2OWMxOGJiOTAwZGRjNjM1Zjk3Zjc0ZmMiLCJ0cyI6MTc3NTU5NDk3MTcxNX0" class="download-btn">
-        <div><i class="fab fa-apple"></i> Download & Sign Up</div>
-        <span>Available for iOS & Android</span>
+    <a href="https://rainawards.com/r/eyJ0IjoidGVzdGVydXAtYiIsInUiOiI2OWMxOGJiOTAwZGRjNjM1Zjk3Zjc0ZmMiLCJ0cyI6MTc3NTU5NDk3MTcxNX0" class="cta-btn">
+        <div><i class="fas fa-rocket"></i> Join & Start Testing</div>
+        <span>Register via RainAwards Secure Link</span>
     </a>
 
-    <div class="section-label">Top Offers</div>
+    <div class="section-title">Highest Payouts Today</div>
 
     <div class="offer-card">
-        <div class="offer-icon"><i class="fas fa-play"></i></div>
-        <div class="offer-info">
-            <b>Scroll videos on App</b>
-            <span>Earn $149 for every hour of scrolling</span>
+        <div class="offer-icon"><i class="fas fa-mobile-alt"></i></div>
+        <div class="offer-details">
+            <b>Premium Mobile Games</b>
+            <span>Test 5 new strategy games</span>
         </div>
-        <div class="offer-price">
-            <span class="price-val">$149</span>
-            <span class="rating">★ 5.0</span>
+        <div class="offer-payout">
+            <span class="payout-amount">$120</span>
+            <span style="font-size: 0.6rem; color: var(--gold);">★ TOP RATED</span>
         </div>
     </div>
 
-    <div class="activation-box">
-        <i class="fas fa-exclamation-triangle"></i>
-        <div class="act-text">
-            <b>Activation required</b>
-            <p>New users: Complete <b>2 short tasks</b> to unlock the scrolling offer. Already done? Launch the offer directly from your dashboard!</p>
+    <div class="offer-card">
+        <div class="offer-icon"><i class="fas fa-vial"></i></div>
+        <div class="offer-details">
+            <b>Beta App Feedback</b>
+            <span>Review 3 lifestyle applications</span>
+        </div>
+        <div class="offer-payout">
+            <span class="payout-amount">$85</span>
+            <span style="font-size: 0.6rem; color: #8b949e;">VERIFIED</span>
+        </div>
+    </div>
+
+    <div class="activation-card">
+        <i class="fas fa-lock"></i>
+        <div class="act-content">
+            <b>Activation Required</b>
+            <p>New testers: Complete <b>2 initial test offers</b> to unlock your full dashboard and high-ticket payouts ($100+). Check your email after signing up!</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testerup | Premium Beta Testing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --green: #2ecc71;
+            --dark-bg: #0f1216;
+            --card-bg: #161b22;
+            --border: #30363d;
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Branding Header */
+        .brand-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .brand-logo {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #1c2128, #2ecc71);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 0 15px rgba(46, 204, 113, 0.2);
+        }
+
+        .status-badge {
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid var(--green);
+            color: var(--green);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 0 0 10px;
+        }
+
+        h1 span {
+            color: var(--green);
+        }
+
+        .subtitle {
+            color: #8b949e;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        /* Call to Action Button */
+        .cta-btn {
+            background: var(--green);
+            color: white;
+            padding: 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+            margin-bottom: 35px;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        .cta-btn span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .section-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #484f58;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Testerup Offer Card */
+        .offer-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            margin-bottom: 12px;
+        }
+
+        .offer-icon {
+            width: 50px;
+            height: 50px;
+            background: #000;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--gold);
+            font-size: 1.3rem;
+        }
+
+        .offer-details b {
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .offer-details span {
+            font-size: 0.75rem;
+            color: #8b949e;
+        }
+
+        .offer-payout {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .payout-amount {
+            color: var(--green);
+            font-weight: 900;
+            font-size: 1.3rem;
+            display: block;
+        }
+
+        /* Activation Required Box */
+        .activation-card {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: left;
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .activation-card i {
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-top: 3px;
+        }
+
+        .act-content b {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .act-content p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #c9d1d9;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="brand-header">
+        <div class="brand-logo"><i class="fas fa-gamepad"></i></div>
+        <span style="color: #484f58; font-size: 1.5rem;">+</span>
+        <div class="brand-logo" style="background: #fff; color: #000;"><i class="fas fa-check-double"></i></div>
+    </div>
+
+    <div class="status-badge">
+        <i class="fas fa-user-shield"></i> Premium Tester Access
+    </div>
+
+    <h1>Get Paid for <span>Testing</span> Games & <span>Apps</span></h1>
+    <p class="subtitle">Join Testerup: The #1 Platform for Paid Beta Testing.</p>
+
+    <a href="https://rainawards.com/r/eyJ0IjoidGVzdGVydXAtYiIsInUiOiI2OWMxOGJiOTAwZGRjNjM1Zjk3Zjc0ZmMiLCJ0cyI6MTc3NTU5NDk3MTcxNX0" class="cta-btn">
+        <div><i class="fas fa-rocket"></i> Join & Start Testing</div>
+        <span>Register via RainAwards Secure Link</span>
+    </a>
+
+    <div class="section-title">Highest Payouts Today</div>
+
+    <div class="offer-card">
+        <div class="offer-icon"><i class="fas fa-mobile-alt"></i></div>
+        <div class="offer-details">
+            <b>Premium Mobile Games</b>
+            <span>Test 5 new strategy games</span>
+        </div>
+        <div class="offer-payout">
+            <span class="payout-amount">$120</span>
+            <span style="font-size: 0.6rem; color: var(--gold);">★ TOP RATED</span>
+        </div>
+    </div>
+
+    <div class="offer-card">
+        <div class="offer-icon"><i class="fas fa-vial"></i></div>
+        <div class="offer-details">
+            <b>Beta App Feedback</b>
+            <span>Review 3 lifestyle applications</span>
+        </div>
+        <div class="offer-payout">
+            <span class="payout-amount">$85</span>
+            <span style="font-size: 0.6rem; color: #8b949e;">VERIFIED</span>
+        </div>
+    </div>
+
+    <div class="activation-card">
+        <i class="fas fa-lock"></i>
+        <div class="act-content">
+            <b>Activation Required</b>
+            <p>New testers: Complete <b>2 initial test offers</b> to unlock your full dashboard and high-ticket payouts ($100+). Check your email after signing up!</p>
         </div>
     </div>
 </div>
