@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn by Playing & Scrolling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --green: #2ecc71;
+            --dark-bg: #0f1216;
+            --card-bg: #161b22;
+            --border: #30363d;
+            --orange: #ffa500;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        /* Logos Header */
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .logo-box {
+            width: 60px;
+            height: 60px;
+            background: #1c2128;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            border: 1px solid var(--border);
+        }
+
+        .badge-status {
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid var(--green);
+            color: var(--green);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 0 0 10px;
+        }
+
+        h1 span {
+            color: var(--green);
+        }
+
+        .subtitle {
+            color: #8b949e;
+            font-size: 1rem;
+            margin-bottom: 35px;
+        }
+
+        /* Main Download Button */
+        .download-btn {
+            background: var(--green);
+            color: white;
+            padding: 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.2);
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        .download-btn span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        .section-label {
+            text-align: center;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #484f58;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Offer Card */
+        .offer-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .offer-icon {
+            width: 50px;
+            height: 50px;
+            background: black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: var(--green);
+        }
+
+        .offer-info b {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .offer-info span {
+            font-size: 0.8rem;
+            color: #8b949e;
+        }
+
+        .offer-price {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .price-val {
+            color: var(--green);
+            font-weight: 900;
+            font-size: 1.4rem;
+            display: block;
+        }
+
+        .rating {
+            color: var(--orange);
+            font-size: 0.75rem;
+        }
+
+        /* Activation Box */
+        .activation-box {
+            background: rgba(255, 165, 0, 0.05);
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            gap: 15px;
+        }
+
+        .activation-box i {
+            color: var(--orange);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .act-text b {
+            color: var(--orange);
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .act-text p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #c9d1d9;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-logos">
+        <div class="logo-box"><i class="fab fa-tiktok"></i></div>
+        <span style="color: #484f58; font-size: 1.2rem;">&times;</span>
+        <div class="logo-box"><i class="fas fa-coins" style="color: var(--green);"></i></div>
+    </div>
+
+    <div class="badge-status">
+        <i class="fas fa-check-circle"></i> You are here
+    </div>
+
+    <h1>Earn money by <span>playing</span> and <span>scrolling</span></h1>
+    <p class="subtitle">Download. Scroll & test games. Earn money.</p>
+
+    <a href="https://rainawards.com/r/eyJ0IjoidGVzdGVydXAtYiIsInUiOiI2OWMxOGJiOTAwZGRjNjM1Zjk3Zjc0ZmMiLCJ0cyI6MTc3NTU5NDk3MTcxNX0" class="download-btn">
+        <div><i class="fab fa-apple"></i> Download & Sign Up</div>
+        <span>Available for iOS & Android</span>
+    </a>
+
+    <div class="section-label">Top Offers</div>
+
+    <div class="offer-card">
+        <div class="offer-icon"><i class="fas fa-play"></i></div>
+        <div class="offer-info">
+            <b>Scroll videos on App</b>
+            <span>Earn $149 for every hour of scrolling</span>
+        </div>
+        <div class="offer-price">
+            <span class="price-val">$149</span>
+            <span class="rating">★ 5.0</span>
+        </div>
+    </div>
+
+    <div class="activation-box">
+        <i class="fas fa-exclamation-triangle"></i>
+        <div class="act-text">
+            <b>Activation required</b>
+            <p>New users: Complete <b>2 short tasks</b> to unlock the scrolling offer. Already done? Launch the offer directly from your dashboard!</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
