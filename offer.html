@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testerup | Premium Beta Testing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    <title>Testerup | Exclusive Access</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --green: #2ecc71;
-            --dark-bg: #0f1216;
+            --primary: #2ecc71;
+            --bg-dark: #0f1216;
             --card-bg: #161b22;
             --border: #30363d;
             --gold: #d4af37;
@@ -17,78 +17,88 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--dark-bg);
-            color: white;
+            background-color: var(--bg-dark);
+            color: #ffffff;
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 480px;
+            max-width: 450px;
             width: 100%;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Branding Header */
-        .brand-header {
+        /* Logos Section */
+        .logos-wrapper {
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
             margin-bottom: 25px;
         }
 
-        .brand-logo {
+        .logo-box {
             width: 65px;
             height: 65px;
-            background: linear-gradient(135deg, #1c2128, #2ecc71);
+            background: #1c2128;
+            border: 1px solid var(--border);
             border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            border: 1px solid var(--border);
-            box-shadow: 0 0 15px rgba(46, 204, 113, 0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        .status-badge {
+        .logo-box i.fa-gamepad { color: var(--primary); }
+        .logo-box i.fa-check-double { color: #fff; }
+
+        .badge-verified {
             background: rgba(46, 204, 113, 0.1);
-            border: 1px solid var(--green);
-            color: var(--green);
-            padding: 6px 16px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 18px;
             border-radius: 50px;
             font-size: 0.75rem;
             font-weight: 700;
             margin-bottom: 20px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         h1 {
             font-size: 2.2rem;
             font-weight: 900;
             line-height: 1.1;
-            margin: 0 0 10px;
+            margin: 0 0 15px;
+            text-align: center;
         }
 
         h1 span {
-            color: var(--green);
+            color: var(--primary);
         }
 
         .subtitle {
             color: #8b949e;
             font-size: 0.95rem;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            text-align: center;
         }
 
-        /* Call to Action Button */
-        .cta-btn {
-            background: var(--green);
+        /* BUTONUL VERDE - ACUM FĂRĂ RAINAWARDS */
+        .cta-button {
+            background: var(--primary);
             color: white;
-            padding: 22px;
+            padding: 22px 0;
+            width: 100%;
             border-radius: 20px;
             text-decoration: none;
             display: flex;
@@ -96,44 +106,53 @@
             align-items: center;
             font-weight: 800;
             font-size: 1.4rem;
-            margin-bottom: 35px;
-            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
-            transition: 0.3s;
+            margin-bottom: 40px;
+            box-shadow: 0 12px 25px rgba(46, 204, 113, 0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            cursor: pointer;
         }
 
-        .cta-btn:hover {
-            transform: translateY(-3px);
+        .cta-button:hover {
+            transform: translateY(-5px);
             filter: brightness(1.1);
+            box-shadow: 0 15px 35px rgba(46, 204, 113, 0.5);
         }
 
-        .cta-btn span {
+        .cta-button span {
             font-size: 0.8rem;
             font-weight: 400;
             opacity: 0.9;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .section-title {
-            font-size: 0.7rem;
+        .section-label {
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #484f58;
-            margin-bottom: 15px;
-            font-weight: 600;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        /* Testerup Offer Card */
+        /* Card Ofertă */
         .offer-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 20px;
+            border-radius: 22px;
             padding: 20px;
+            width: 100%;
             display: flex;
             align-items: center;
-            text-align: left;
-            margin-bottom: 12px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
         }
 
-        .offer-icon {
+        .offer-img {
             width: 50px;
             height: 50px;
             background: #000;
@@ -141,49 +160,61 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            margin-right: 18px;
+            font-size: 1.4rem;
             color: var(--gold);
-            font-size: 1.3rem;
         }
 
-        .offer-details b {
+        .offer-text {
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .offer-text b {
             display: block;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            margin-bottom: 2px;
         }
 
-        .offer-details span {
-            font-size: 0.75rem;
+        .offer-text span {
+            font-size: 0.8rem;
             color: #8b949e;
         }
 
         .offer-payout {
-            margin-left: auto;
             text-align: right;
         }
 
-        .payout-amount {
-            color: var(--green);
-            font-weight: 900;
-            font-size: 1.3rem;
+        .amount {
             display: block;
+            color: var(--primary);
+            font-weight: 900;
+            font-size: 1.5rem;
         }
 
-        /* Activation Required Box */
-        .activation-card {
+        .rating {
+            font-size: 0.7rem;
+            color: var(--gold);
+        }
+
+        /* Activation Box */
+        .activation-box {
             background: rgba(212, 175, 55, 0.05);
             border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 20px;
-            padding: 20px;
-            text-align: left;
-            margin-top: 20px;
+            border-radius: 22px;
+            padding: 22px;
+            width: 100%;
+            box-sizing: border-box;
             display: flex;
             gap: 15px;
+            text-align: left;
+            margin-top: 20px;
         }
 
-        .activation-card i {
+        .activation-box i {
             color: var(--gold);
-            font-size: 1.4rem;
-            margin-top: 3px;
+            font-size: 1.5rem;
+            margin-top: 4px;
         }
 
         .act-content b {
@@ -191,72 +222,77 @@
             text-transform: uppercase;
             font-size: 0.85rem;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
         .act-content p {
             margin: 0;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #c9d1d9;
-            line-height: 1.4;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 400px) {
+            h1 { font-size: 1.8rem; }
+            .cta-button { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="brand-header">
-        <div class="brand-logo"><i class="fas fa-gamepad"></i></div>
-        <span style="color: #484f58; font-size: 1.5rem;">+</span>
-        <div class="brand-logo" style="background: #fff; color: #000;"><i class="fas fa-check-double"></i></div>
-    </div>
-
-    <div class="status-badge">
-        <i class="fas fa-user-shield"></i> Premium Tester Access
-    </div>
-
-    <h1>Get Paid for <span>Testing</span> Games & <span>Apps</span></h1>
-    <p class="subtitle">Join Testerup: The #1 Platform for Paid Beta Testing.</p>
-
-    <a href="https://rainawards.com/r/eyJ0IjoidGVzdGVydXAtYiIsInUiOiI2OWMxOGJiOTAwZGRjNjM1Zjk3Zjc0ZmMiLCJ0cyI6MTc3NTU5NDk3MTcxNX0" class="cta-btn">
-        <div><i class="fas fa-rocket"></i> Join & Start Testing</div>
-        <span>Register via RainAwards Secure Link</span>
-    </a>
-
-    <div class="section-title">Highest Payouts Today</div>
-
-    <div class="offer-card">
-        <div class="offer-icon"><i class="fas fa-mobile-alt"></i></div>
-        <div class="offer-details">
-            <b>Premium Mobile Games</b>
-            <span>Test 5 new strategy games</span>
+    <div class="container">
+        <div class="logos-wrapper">
+            <div class="logo-box"><i class="fas fa-gamepad"></i></div>
+            <div style="font-size: 1.5rem; color: #30363d;">&times;</div>
+            <div class="logo-box" style="background: #fff;"><i class="fas fa-check-double" style="color: #000;"></i></div>
         </div>
-        <div class="offer-payout">
-            <span class="payout-amount">$120</span>
-            <span style="font-size: 0.6rem; color: var(--gold);">★ TOP RATED</span>
-        </div>
-    </div>
 
-    <div class="offer-card">
-        <div class="offer-icon"><i class="fas fa-vial"></i></div>
-        <div class="offer-details">
-            <b>Beta App Feedback</b>
-            <span>Review 3 lifestyle applications</span>
+        <div class="badge-verified">
+            <i class="fas fa-shield-alt"></i> Access Verified
         </div>
-        <div class="offer-payout">
-            <span class="payout-amount">$85</span>
-            <span style="font-size: 0.6rem; color: #8b949e;">VERIFIED</span>
-        </div>
-    </div>
 
-    <div class="activation-card">
-        <i class="fas fa-lock"></i>
-        <div class="act-content">
-            <b>Activation Required</b>
-            <p>New testers: Complete <b>2 initial test offers</b> to unlock your full dashboard and high-ticket payouts ($100+). Check your email after signing up!</p>
+        <h1>Start Testing & <span>Get Paid</span></h1>
+        <p class="subtitle">Join Testerup: The world's largest platform for beta testing mobile games.</p>
+
+        <a href="https://rainawards.com/r/eyJ0IjoidGVzdGVydXAtYiIsInUiOiI2OWMxOGJiOTAwZGRjNjM1Zjk3Zjc0ZmMiLCJ0cyI6MTc3NTU5NDk3MTcxNX0" class="cta-button">
+            <div><i class="fas fa-user-plus"></i> JOIN & START NOW</div>
+            <span>Official Tester Dashboard</span>
+        </a>
+
+        <div class="section-label">Highest Payouts Today</div>
+
+        <div class="offer-card">
+            <div class="offer-img"><i class="fas fa-mobile-screen"></i></div>
+            <div class="offer-text">
+                <b>Mobile Game Beta</b>
+                <span>Task: Reach Level 20</span>
+            </div>
+            <div class="offer-payout">
+                <span class="amount">$120</span>
+                <span class="rating">★ 5.0</span>
+            </div>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-img"><i class="fas fa-vial"></i></div>
+            <div class="offer-text">
+                <b>App Performance</b>
+                <span>Task: Survey & Feedback</span>
+            </div>
+            <div class="offer-payout">
+                <span class="amount">$85</span>
+                <span class="rating">★ 4.9</span>
+            </div>
+        </div>
+
+        <div class="activation-box">
+            <i class="fas fa-info-circle"></i>
+            <div class="act-content">
+                <b>Activation Required</b>
+                <p>New testers must complete <b>2 initial tasks</b> to fully unlock the $1,000+ premium dashboard and PayPal cashouts.</p>
+            </div>
         </div>
     </div>
-</div>
 
 </body>
 </html>
