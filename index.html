@@ -3,198 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verification Status | Secure Access</title>
+    <title>Testerup | Official Invitation</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-green: #2ecc71;
-            --gold-accent: #d4af37;
-            --bg-dark: #080808;
-            --card-bg: rgba(20, 20, 20, 0.6);
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
+            --tester-blue: #2ecc71; /* Verdele Testerup */
+            --bg-dark: #0a0c10;
+            --card-bg: rgba(17, 21, 28, 0.8);
+            --gold: #d4af37;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--bg-dark);
-            color: var(--text-main);
+            color: white;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow: hidden;
-            position: relative;
-        }
-
-        /* Fundal animat discret */
-        body::before {
-            content: '';
-            position: absolute;
-            width: 150%; height: 150%;
-            background: radial-gradient(circle at center, rgba(46, 204, 113, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
-            animation: bgShift 10s infinite linear;
-            z-index: -1;
-        }
-
-        @keyframes bgShift {
-            0% { transform: translate(-10%, -10%); }
-            100% { transform: translate(0%, 0%); }
+            background: radial-gradient(circle at center, #111827 0%, #0a0c10 100%);
         }
 
         .glass-card {
             width: 90%;
             max-width: 420px;
             background: var(--card-bg);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 28px;
-            padding: 45px 35px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            animation: cardFadeIn 0.6s ease-out;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Aliniere centrală pe orizontală a elementelor interne */
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            animation: slideUp 0.7s ease-out;
         }
 
-        @keyframes cardFadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .status-badge {
-            background: rgba(46, 204, 113, 0.15);
-            border: 1px solid var(--primary-green);
-            color: var(--primary-green);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.8rem;
-            letter-spacing: 0.5px;
-            margin-bottom: 25px;
+        .shield-icon {
+            font-size: 3.5rem;
+            color: var(--tester-blue);
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(46, 204, 113, 0.3));
+        }
+
+        .badge-verified {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-        }
-
-        h2 {
-            font-weight: 800;
-            font-size: 2.3rem;
-            line-height: 1.2;
-            margin: 0 0 20px;
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid var(--tester-blue);
+            color: var(--tester-blue);
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: -1px;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
         }
 
-        h2 span {
-            background: linear-gradient(to right, #ffffff, var(--gold-accent));
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            background: linear-gradient(to right, #fff, var(--tester-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .info-box {
-            background: rgba(255, 165, 0, 0.1);
-            border: 1px solid rgba(255, 165, 0, 0.3);
-            color: #ffa500;
-            padding: 20px;
-            border-radius: 16px;
-            font-size: 0.9rem;
-            margin-bottom: 35px;
-            display: flex;
-            align-items: flex-start;
+        .check-list {
             text-align: left;
-            gap: 12px;
-            width: 100%; /* Ocupă lățimea cardului minus padding-ul */
-            box-sizing: border-box; /* Include padding în lățime */
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .info-box i { margin-top: 3px; font-size: 1.1rem; }
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
 
-        .btn-yes {
+        .check-item i {
+            color: var(--tester-blue);
+            font-size: 1rem;
+        }
+
+        .btn-main {
             background: white;
             color: black;
-            padding: 22px 30px;
-            border-radius: 18px;
+            padding: 22px;
+            border-radius: 20px;
             text-decoration: none;
-            font-weight: 800;
+            display: block;
+            font-weight: 900;
             font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: none;
-            cursor: pointer;
-            width: 100%; /* Ocupă toată lățimea disponibilă din info-box */
-            box-sizing: border-box;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
             position: relative;
             overflow: hidden;
+            border: none;
+            width: 100%;
+            cursor: pointer;
         }
 
-        /* Efect de strălucire (glow) la hover */
-        .btn-yes:hover {
-            transform: translateY(-3px) scale(1.02);
-            background: var(--primary-green);
+        .btn-main:hover {
+            transform: scale(1.03);
+            background: var(--tester-blue);
             color: white;
-            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.4);
+            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.4);
         }
 
-        /* Animație de strălucire internă periodică */
-        .btn-yes::after {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: rgba(255,255,255,0.1);
-            transform: rotate(45deg);
-            animation: buttonGlow 4s infinite;
-            z-index: 1;
-        }
-
-        @keyframes buttonGlow {
-            0% { transform: translate(-100%, -100%) rotate(45deg); }
-            100% { transform: translate(100%, 100%) rotate(45deg); }
-        }
-
-        .sub-text {
-            margin-top: 10px;
-            font-weight: 400;
-            font-size: 0.8rem;
-            opacity: 0.6;
+        .btn-main span {
             display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            opacity: 0.8;
         }
 
-        @media (max-width: 480px) {
-            h2 { font-size: 2rem; }
-            .glass-card { padding: 35px 25px; }
-            .btn-yes { font-size: 1.2rem; }
+        .footer-secure {
+            margin-top: 25px;
+            font-size: 0.7rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
     <div class="glass-card">
-        <div class="status-badge">
-            <i class="fas fa-check-circle"></i> VERIFICATION COMPLETE
+        <div class="shield-icon">
+            <i class="fas fa-user-shield"></i>
         </div>
 
-        <h2>ARE YOU<br><span>READY?</span></h2>
-        
-        <div class="info-box">
-            <i class="fas fa-info-circle"></i>
-            <div>
-                To unlock the high-payout <b>$149/Hr scrolling offer</b> shown on TikTok, you must complete the steps on the next page.
+        <div class="badge-verified">
+            <i class="fas fa-check-circle"></i> Official Tester Invite
+        </div>
+
+        <h1>Become a <span>Premium</span> Game Tester</h1>
+
+        <div class="check-list">
+            <div class="check-item">
+                <i class="fas fa-check"></i>
+                <span>Exclusive access to beta games</span>
+            </div>
+            <div class="check-item">
+                <i class="fas fa-check"></i>
+                <span>Direct payouts via PayPal</span>
+            </div>
+            <div class="check-item">
+                <i class="fas fa-check"></i>
+                <span>Work from anywhere (Mobile)</span>
             </div>
         </div>
 
-        <a href="offer.html" class="btn-yes">
-            YES, START NOW
-            <span class="sub-text">Instant Access Required</span>
+        <a href="offer.html" class="btn-main">
+            YES, I'M READY
+            <span>Check Availability in Your Region</span>
         </a>
 
+        <div class="footer-secure">
+            <i class="fas fa-lock"></i> Secure 256-bit Connection
+        </div>
     </div>
 
 </body>
