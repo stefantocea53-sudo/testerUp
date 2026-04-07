@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testerup | Official Invitation</title>
+    <title>Official Tester Invite | Access Pending</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --tester-blue: #2ecc71; /* Verdele Testerup */
-            --bg-dark: #0a0c10;
-            --card-bg: rgba(17, 21, 28, 0.8);
+            --tester-green: #2ecc71;
+            --bg-dark: #080808;
+            --card-bg: rgba(20, 20, 20, 0.7);
             --gold: #d4af37;
         }
 
@@ -24,7 +24,16 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
-            background: radial-gradient(circle at center, #111827 0%, #0a0c10 100%);
+            position: relative;
+        }
+
+        /* Fundal cu gradient discret */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+            z-index: -2;
         }
 
         .glass-card {
@@ -32,54 +41,45 @@
             max-width: 420px;
             background: var(--card-bg);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 30px;
-            padding: 40px 30px;
+            padding: 40px;
             text-align: center;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-            animation: slideUp 0.7s ease-out;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            animation: fadeIn 0.8s ease-out;
+            
+            /* ACESTA ESTE SECRETUL CENTRĂRII PERFECTE */
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
         }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         .shield-icon {
             font-size: 3.5rem;
-            color: var(--tester-blue);
+            color: var(--tester-green);
             margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px rgba(46, 204, 113, 0.3));
+            filter: drop-shadow(0 0 10px rgba(46, 204, 113, 0.4));
         }
 
-        .badge-verified {
+        .verified-badge {
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid var(--tester-green);
+            color: var(--tester-green);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            margin-bottom: 25px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(46, 204, 113, 0.1);
-            border: 1px solid var(--tester-blue);
-            color: var(--tester-blue);
-            padding: 6px 15px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
         }
 
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 15px;
-        }
-
-        h1 span {
-            background: linear-gradient(to right, #fff, var(--tester-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        h2 { font-weight: 800; font-size: 2.3rem; line-height: 1.1; margin: 0 0 15px; text-transform: uppercase; }
+        h2 span { background: linear-gradient(to right, #fff, var(--tester-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         .check-list {
             text-align: left;
@@ -88,63 +88,71 @@
             padding: 20px;
             border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.05);
+            width: 100%; /* Important pentru alinierea listei în interiorul cardului flex */
+            box-sizing: border-box;
         }
 
-        .check-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-            color: #ccc;
-        }
+        .check-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 0.9rem; color: #ccc; }
+        .check-item i { color: var(--tester-green); }
 
-        .check-item i {
-            color: var(--tester-blue);
-            font-size: 1rem;
-        }
-
-        .btn-main {
+        /* BUTONUL ALB - ACUM CENTRAT PERFECT */
+        .btn-ready {
             background: white;
             color: black;
-            padding: 22px;
+            padding: 22px 0; /* Padding sus/jos, 0 stânga/dreapta */
             border-radius: 20px;
             text-decoration: none;
             display: block;
             font-weight: 900;
             font-size: 1.4rem;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+            transition: 0.3s;
             position: relative;
             overflow: hidden;
             border: none;
-            width: 100%;
+            width: 100%; /* Ocupă toată lățimea disponibilă din glass-card */
             cursor: pointer;
+            box-sizing: border-box;
+            box-shadow: 0 5px 15px rgba(255,255,255,0.1);
         }
 
-        .btn-main:hover {
-            transform: scale(1.03);
-            background: var(--tester-blue);
+        .btn-ready:hover {
+            transform: translateY(-3px);
+            background: var(--tester-green);
             color: white;
-            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.4);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.5);
         }
 
-        .btn-main span {
+        /* Textul de sub "YES, I'M READY" */
+        .btn-sub-text {
             display: block;
-            font-size: 0.75rem;
             font-weight: 400;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 5px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 4px;
-            opacity: 0.8;
         }
 
-        .footer-secure {
-            margin-top: 25px;
-            font-size: 0.7rem;
-            color: #555;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        /* Animație periodică de strălucire pe buton */
+        .btn-ready::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+            animation: glow 4s infinite;
+        }
+
+        @keyframes glow {
+            0% { transform: translate(-100%, -100%) rotate(45deg); }
+            100% { transform: translate(100%, 100%) rotate(45deg); }
+        }
+
+        @media (max-width: 480px) {
+            h2 { font-size: 2rem; }
+            .glass-card { padding: 35px 25px; }
+            .btn-ready { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -155,35 +163,23 @@
             <i class="fas fa-user-shield"></i>
         </div>
 
-        <div class="badge-verified">
+        <div class="verified-badge">
             <i class="fas fa-check-circle"></i> Official Tester Invite
         </div>
 
-        <h1>Become a <span>Premium</span> Game Tester</h1>
+        <h2>Become a<br><span>Premium</span> Tester</h2>
 
         <div class="check-list">
-            <div class="check-item">
-                <i class="fas fa-check"></i>
-                <span>Exclusive access to beta games</span>
-            </div>
-            <div class="check-item">
-                <i class="fas fa-check"></i>
-                <span>Direct payouts via PayPal</span>
-            </div>
-            <div class="check-item">
-                <i class="fas fa-check"></i>
-                <span>Work from anywhere (Mobile)</span>
-            </div>
+            <div class="check-item"><i class="fas fa-check"></i> <span>Exclusive access to beta games</span></div>
+            <div class="check-item"><i class="fas fa-check"></i> <span>Direct payouts via PayPal</span></div>
+            <div class="check-item"><i class="fas fa-check"></i> <span>Work from anywhere (Mobile)</span></div>
         </div>
 
-        <a href="offer.html" class="btn-main">
+        <a href="offer.html" class="btn-ready">
             YES, I'M READY
-            <span>Check Availability in Your Region</span>
+            <span class="btn-sub-text">Check availability in your region</span>
         </a>
 
-        <div class="footer-secure">
-            <i class="fas fa-lock"></i> Secure 256-bit Connection
-        </div>
     </div>
 
 </body>
